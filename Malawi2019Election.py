@@ -4,15 +4,16 @@ Created on Wed Feb 14 23:09:18 2024
 
 @author: IAN CARTER KULANI
 """
-
+#This software prompts the user to enter total number of published centers,total number of registered votes, total number of null and void votes, total number of valid votes and total valid votes for each candidate. Afterward,it determines the candidate with the majority of votes and displays the results on the screen.
+#NOTE:For a candidate to be a majority winner the candidate total valid votes should be greater than majority votes.
 print("==============================MALAWI ELECTROL COMMISSION==============================\n")
 Totalpublishedcenters=int(input("Enter Total published centers:"))
 #Get the total number of registered votes
-TotalRegisteredvotes=int(input("Enter Total Registered Votes:"))
+TotalRegisteredvoters=int(input("Enter Total Registered Voters/Turnout:"))
 #Get Total number of votes cast
-Totalvotescast=int(input("Enter Total Votes Cast:"))
+Totalvotescast=int(input("Enter Total Votes Cast/Total Votes:"))
 #Get total number of Null_&_Void votes
-Nullandvoid=int(input("Enter Total Null and Void Votes:"))
+Nullandvoid=int(input("Enter Total Null_&_Void Votes/Invalid Votes:"))
 #Get Total Valid Votes for All candidates
 Totalvalidvotes=int(input("Enter Total Valid Votes:"))
 #Get Total Valid Votes For Dr Lazarus MacCrthy Chakwera
@@ -58,21 +59,40 @@ else:
 
 print("_________________________________ELECTION STATISTICS_____________________________________\n")   
 #calculating Percentage 
-   
-majority_percent=Totalvalidvotesfor_Lazarusmaccarthychakwera*percent/Totalvalidvotes;
-print("Dr Lazarus MacCrthy Chakwerain percent=", majority_percent)
-majority_percent=Totalvalidvotesfor_Saulosklauschilima*percent/Totalvalidvotes;
-print("Total Valid Votes For Dr Saulos Klaus Chilima in percent=", majority_percent)
-majority_percent=Totalvalidvotesfor_ProfessorJohneugeneschisi*percent/Totalvalidvotes;
-print("Total Valid Votes For Professor John Eugene Chisi in percent=", majority_percent)
-majority_percent=Totalvalidvotesfor_ReverendHadwickayiya*percent/Totalvalidvotes;
-print("Total Valid Votes For Reverend Hadwick Kayiya in percent=", majority_percent)
-majority_percent=Totalvalidvotesfor_Peterkuwani*percent/Totalvalidvotes;
-print("Total Valid Votes For Peter DSD Kuwani in percent=",majority_percent)
-majority_percent=Totalvalidvotesfor_Atupelemuluzi*percent/Totalvalidvotes;
-print("Total Valid Votes For Atupele Muluzi in percent=",majority_percent)
-majority_percent=Totalvalidvotesfor_profarthurpetermuthalika*percent/Totalvalidvotes;
-print("Total Valid Votes For Professor Arthu Peter Muthalika in percent=",majority_percent)
+ 
+#Calculating percentage for total votes cast
+Percentage=round(Totalvalidvotes*percent/Totalvalidvotes, 2);
+print("Total Votes Cast in percentage=",Percentage)
+#Calculating percentage for total valid votes for all canidates
+Percentage=round(Totalvalidvotes*percent/Totalvotescast, 2);
+print("Total Valid Votes for all candidtes in percentage=",Percentage)
+#Calculating percentage for null_&_void votes
+Percentage=round(Nullandvoid*percent/Totalvalidvotes, 2);
+print("Total Null_&_Void in percentage=",Percentage)
+#calculating total registered voters/turnout
+Percentage=round(Totalvotescast*percent/TotalRegisteredvoters, 2);
+print("Total Registered voters/turnout in percentage=",Percentage)
+#Calculating percentage for Dr Lazarus MacCrthy Chakwera
+Percentage=round(Totalvalidvotesfor_Lazarusmaccarthychakwera*percent/Totalvalidvotes, 2);
+print("Dr Lazarus MacCrthy Chakwera in percent=",Percentage)
+#Calculating percentage for Dr Saulos Klaus Chilima
+Percentage=round(Totalvalidvotesfor_Saulosklauschilima*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Dr Saulos Klaus Chilima in percentage=",Percentage)
+#Calculating percentage for Professor John Eugene Chisi
+Percentage=round(Totalvalidvotesfor_ProfessorJohneugeneschisi*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Professor John Eugene Chisi in percentage=",Percentage)
+#Calculating percentage for Reverend Hadwick Kayiya
+Percentage=round(Totalvalidvotesfor_ReverendHadwickayiya*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Reverend Hadwick Kayiya in percentage=",Percentage)
+#Calculating percentage for Peter DSD Kuwani
+Percentage=round(Totalvalidvotesfor_Peterkuwani*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Peter DSD Kuwani in percentage=",Percentage)
+#Calculating percentage for Atupele Muluzi
+Percentage=round(Totalvalidvotesfor_Atupelemuluzi*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Atupele Muluzi in percentage=",Percentage)
+#Calculating percentage for Professor Arthu Peter Muthalika
+Percentage=round(Totalvalidvotesfor_profarthurpetermuthalika*percent/Totalvalidvotes, 2);
+print("Total Valid Votes For Professor Arthu Peter Muthalika in percentage=",Percentage)
 
 print("==========================================================================================\n")
 
